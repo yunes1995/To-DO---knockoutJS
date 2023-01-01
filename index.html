@@ -12,7 +12,7 @@
 
 <body>
     <h1 class="title">To DO list</h1>
-    <h2 class="title2">welcome</h2>
+    
 
     <section class="week">
 
@@ -24,7 +24,7 @@
                 Number Of Task : 1
             </h2>
             <h2 class="center-text" data-bind="visible: todos().length > 1">
-                Number Of Task : <span data-bind="text: todos().length"></span>
+                Number Of Task : <span class="counter" data-bind="text: todos().length"></span>
             </h2>
             <button data-bind="click: addTodo, disable: todos().length > 19" class="add-task">
                 Add Task
@@ -56,55 +56,22 @@
         </div>
     </section>
 
+    <section class="menuBar">
+        <div id="nav">
+            <ul>
+              <li class="all-todos">All Todos</li>
+              <li class="done-todos">Completed Todos</li>
+              <li class="undone-todos">Active Todos</li>
+            </ul>
+          </div>
+    </section>
 
-    <!-- <input data-bind="value : firstName">
-    <p> first Name : <span data-bind="text : firstName"></span></p> -->
 
 
 
     <script src="../To-DO---knockoutJS/knockout-3.5.1.js"></script>
     <script src="../To-DO---knockoutJS/ModelView.js"></script>
+    <script src="../To-DO---knockoutJS/menu.js"></script>
 </body>
 
 </html>
-
-
-
-
-<!-- 
-<div id="items">
-    <h2 data-bind="visible: todos().length === 0">
-        Yaaaay! you did all of your things
-    </h2>
-    <h2 data-bind="visible: todos().length === 1">
-        You have 1 thing to do
-    </h2>
-    <h2 data-bind="visible: todos().length > 1">
-        You have <span data-bind="text: todos().length"></span> things to do
-    </h2>
-    <button data-bind="click: addTodo, disable: todos().length > 19" class="add-todo">
-        Add Todo
-    </button>
-    <div class="main-container">
-        <div data-bind="foreach: todos" class="tasks-body">
-            <div class="todo-item">
-                <div data-bind="class: isDone" class="task">
-                    <div>
-                        <input data-bind="value: name, disable: isDone" type="text" placeholder="new task" />
-                    </div>
-                </div>
-                <div data-bind="class: isDone" class="done-remove">
-                    <div data-bind="class: isDone" class="done">
-                        <label>
-                            <input type="checkbox" data-bind="checked: isDone" />
-                            Done
-                        </label>
-                    </div>
-                    <div data-bind="class: isDone" class="remove">
-                        <a href="#" data-bind="click: $root.removeTodo">Remove</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
