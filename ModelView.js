@@ -5,10 +5,8 @@ function Task(data) {
     this.isDone = ko.observable(data.isDone);
 }
 
-// Overall viewmodel for this screen, along with initial state
 function appViewModel() {
     const self = this;
-    self.person = ko.observable("new user");
     this.editing = ko.observable(false);
     this.edit = function() { 
         self.editing(true);
@@ -27,5 +25,50 @@ function appViewModel() {
 
 ko.applyBindings(new appViewModel());
 
+// menunar 
+const allTodo = document.querySelector(".all-todos");
+allTodo.addEventListener("click", () => {
+    const items = document.querySelectorAll(".task, .done-remove");
+    items.forEach(todo => {
+        if(todo.classList.contains("task")){
+            todo.style.display = "block";
+        }
+        if(todo.classList.contains("done-remove")){
+            todo.style.display = "flex";
+        }
+    })
+});
+
+const doneTodo = document.querySelector(".done-todos");
+doneTodo.addEventListener("click", () => {
+    const items = document.querySelectorAll(".task, .done-remove");
+    items.forEach(todo => {
+        todo.style.display = "none";
+        if(todo.classList.contains("true")) {
+            if(todo.classList.contains("task")){
+                todo.style.display = "block";
+            }
+            if(todo.classList.contains("done-remove")){
+                todo.style.display = "flex";
+            }
+        }
+    })
+});
+
+const undoneTodo = document.querySelector(".undone-todos");
+undoneTodo.addEventListener("click", () => {
+    const items = document.querySelectorAll(".task, .done-remove");
+    items.forEach(todo => {
+        if(todo.classList.contains("task")){
+            todo.style.display = "block";
+        }
+        if(todo.classList.contains("done-remove")){
+            todo.style.display = "flex";
+        }
+        if(todo.classList.contains("true")) {
+            todo.style.display = "none"
+        }
+    })
+});
 
  
