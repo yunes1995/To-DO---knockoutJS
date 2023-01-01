@@ -1,0 +1,43 @@
+.center-text {
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-size: 40px;
+   
+    display: flex;
+    justify-content: center;
+}
+.week{
+    width: 91%;
+    height: 446px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+.add-task{
+    margin-left: 46%;
+}
+.isDone{
+    background-color: aqua;
+}
+.true {
+    color: white;
+    background-color: greenyellow !important;
+}
+.main{
+    display: flex;
+}
+.todo-item{
+    display: flex;
+    margin: 28px;
+    margin-left: 120px !important;
+    
+}
+.done-remove{
+    display: flex;
+}
+.remove{
+    margin-left: 10px;
+}
