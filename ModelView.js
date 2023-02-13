@@ -7,10 +7,6 @@ function Task(data) {
 
 function appViewModel() {
     const self = this;
-    this.editing = ko.observable(false);
-    this.edit = function() { 
-        self.editing(true);
-    }
     
     self.getFocus = ko.observable(false);
     
@@ -25,7 +21,8 @@ function appViewModel() {
 
 ko.applyBindings(new appViewModel());
 
-// menunar 
+// MenuBar 
+
 const allTodo = document.querySelector(".all-todos");
 allTodo.addEventListener("click", () => {
     const items = document.querySelectorAll(".task, .done-remove");
